@@ -2,7 +2,7 @@ const AllTask = () => {
   return (
     <div className="flex flex-col gap-4 w-1/2 mt-5">
       <h2 className="text-5xl uppercase font-bold mb-3">All Task List</h2>
-      <div className="flex flex-col gap-4 overflow-y-auto h-[700px] pr-5" id="AllTask">
+      <div className="flex flex-col gap-4 overflow-y-auto h-[625px] pr-5" id="AllTask">
         <div className="items bg-blue-400 p-10 flex items-center justify-between gap-3 rounded-md">
           <h3 className="text-2xl font-semibold">Vikash</h3>
           <h6 className="text-2xl font-medium">Designing</h6>

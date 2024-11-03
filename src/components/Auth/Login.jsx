@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Login = () => {
+const Login = ({loginHandle}) => {
 
 // Now save the data of input value and password on submit , so we use useState and onchange in an input field.
 
@@ -12,10 +12,9 @@ const [password,setPassword]=useState("");
 // Stop the by default feature of form 
  const submitHandler =(e) =>{
     e.preventDefault();
-    // console.log("Email",email)
-    // console.log("password",password)
 
-    // After submit the form the input box will be empty again.
+    loginHandle(email,password);
+
     setEmail("")
     setPassword("")
  }

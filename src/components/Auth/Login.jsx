@@ -15,7 +15,6 @@ const [password,setPassword]=useState("");
     // console.log("Email",email)
     // console.log("password",password)
 
-
     // After submit the form the input box will be empty again.
     setEmail("")
     setPassword("")

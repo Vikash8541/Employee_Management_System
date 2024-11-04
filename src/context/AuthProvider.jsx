@@ -5,6 +5,7 @@ import { getLocalStorage } from "../utilits/LocalStorage";
 
 export const AuthValue = createContext();
 
+// eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
 
 

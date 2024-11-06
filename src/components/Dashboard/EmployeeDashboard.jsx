@@ -7,11 +7,10 @@ const EmployeeDashboard = ({data}) => {
   return (
     <>
 
-    <div className=" p-10 h-screen w-full bg-[#1c1c1c]">
-      <h1>{data.id}</h1>
-      <Header/>
-      <TaskListNumber/>
-      <Tasklist/>
+    <div className=" p-10 h-auto w-full bg-[#1c1c1c]">
+      <Header data = {data}/>
+      <TaskListNumber data = {data}/>
+      <Tasklist data = {data}/>
     </div>
     </>
   )

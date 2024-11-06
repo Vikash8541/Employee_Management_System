@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 
+// eslint-disable-next-line react/prop-types
 const Login = ({loginHandle}) => {
 
 // Now save the data of input value and password on submit , so we use useState and onchange in an input field.

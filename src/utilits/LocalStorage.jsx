@@ -1,6 +1,5 @@
 // Now convert this JSON File into array of an Object
 
-
   const employees = [
     {
       id: 1,
@@ -208,6 +207,11 @@ const admin = [
   {
     id: 1,
     email: "admin@example.com",
+    password: "123",
+  },
+  {
+    id: 2,
+    email: "vikash@example.com",
     password: "123",
   },
 ];

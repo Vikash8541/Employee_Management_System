@@ -1,4 +1,6 @@
+// eslint-disable-next-line react/prop-types
 const TaskListNumber = ({ data }) => {
+  // eslint-disable-next-line react/prop-types
   const { taskCounts } = data;
 
   // Log the incoming taskCounts object for debugging
@@ -13,10 +15,10 @@ const TaskListNumber = ({ data }) => {
   };
 
   const bgBackground = {
-    newTask: "bg-red-400",
+    newTask: "bg-blue-400",
     completed: "bg-green-400",
     accepted: "bg-yellow-400",
-    failed: "bg-blue-400",
+    failed: "bg-red-400",
   };
 
   return (

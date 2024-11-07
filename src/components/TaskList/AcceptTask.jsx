@@ -1,7 +1,7 @@
 const AcceptTask = () => {
   return (
-    <div>
-      <div className="items cursor-default flex-shrink-0 bg-purple-600 p-5 h-full w-[400px] rounded-lg">
+    
+      <div className="Accept-Task items cursor-default flex-shrink-0 bg-yellow-500 p-5 h-full w-[400px] rounded-lg">
         <div className="flex items-center justify-between w-full">
           <h4 className="text-white font-medium bg-red-600 rounded-md py-2 px-4 text-sm">
             High
@@ -17,15 +17,15 @@ const AcceptTask = () => {
         </p>
 
         <div className="button flex items-center justify-between w-full mt-4">
-          <button className="text-sm bg-green-600 text-white px-6 py-2 rounded-md">
+          <button className="text-sm bg-yellow-600 text-white px-6 py-2 rounded-md">
             In Progress
           </button>
           <button className="text-sm bg-red-600 text-white px-6 py-2 rounded-md">
-            Edit
+            Finish
           </button>
         </div>
       </div>
-    </div>
+  
   );
 };
 

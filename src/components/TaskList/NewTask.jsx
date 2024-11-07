@@ -1,7 +1,7 @@
 const NewTask = () => {
   return (
-    <div>
-         <div className="items cursor-default flex-shrink-0 bg-yellow-600 p-5 h-full w-[400px] rounded-lg">
+ 
+         <div className="New-Task items cursor-default flex-shrink-0 bg-blue-500 p-5 h-full w-[400px] rounded-lg">
         <div className="flex items-center justify-between w-full">
           <h4 className="text-white font-medium bg-red-600 rounded-md py-2 px-4 text-sm">
             High
@@ -25,7 +25,7 @@ const NewTask = () => {
           </button>
         </div>
       </div>
-    </div>
+    
   )
 }
 

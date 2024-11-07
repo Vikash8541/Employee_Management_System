@@ -17,15 +17,15 @@ body{
 }
 
 
-#tasklist::-webkit-scrollbar,#AllTask::-webkit-scrollbar {
+#taskDetails::-webkit-scrollbar,#AllTask::-webkit-scrollbar {
     width: 10px !important;
   }
   
-  #tasklist::-webkit-scrollbar-track,#AllTask::-webkit-scrollbar-track {
+  #taskDetails::-webkit-scrollbar-track,#AllTask::-webkit-scrollbar-track {
     background: transparent;
   }
   
-  #tasklist::-webkit-scrollbar-thumb {
+  #taskDetails::-webkit-scrollbar-thumb {
     background-color: #fd5757;
     border-radius: 10px ;
   }

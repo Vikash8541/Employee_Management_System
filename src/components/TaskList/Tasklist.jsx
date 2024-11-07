@@ -7,14 +7,27 @@ import CompleteTask from "./CompleteTask";
 const Tasklist = ({ data }) => {
   return (
     <>
-      <div
-        id="tasklist"
-        className=" mt-10 rounded-lg flex items-center justify-between gap-5 flex-nowrap overflow-x-auto h-[55%] pb-10 w-full"
-      >
-        <NewTask data={data} />
-        <AcceptTask data={data} />
-        <CompleteTask data={data} />
-        <FailedTask data={data} />
+      <div className="flex flex-col gap-10 mt-10">
+        <h2 className="text-4xl font-semibold">Task Details</h2>
+        <div id="taskDetails" className="task-items-details rounded-lg flex items-center justify-start gap-5 flex-nowrap overflow-x-auto h-[55%] pb-10 w-full">
+          {data.tasks.map((task, idx) => {
+            let saveInfo = [];
+
+            if (task.accept) {
+              saveInfo.push(<AcceptTask data = {task} />);
+            }
+            if (task.newTask) {
+              saveInfo.push(<NewTask key={`newTask-${idx}`} />);
+            }
+            if (task.completed) {
+              saveInfo.push(<CompleteTask key={`completed-${idx}`} />);
+            }
+            if (task.failed) {
+              saveInfo.push(<FailedTask key={`failed-${idx}`} />);
+            }
+            return saveInfo;
+          })}
+        </div>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-const AcceptTask = () => {
+const AcceptTask = ({key}) => {
   return (
     
       <div className="Accept-Task items cursor-default flex-shrink-0 bg-yellow-500 p-5 h-full w-[400px] rounded-lg">

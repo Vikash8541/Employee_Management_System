@@ -1,67 +1,63 @@
-import { useContext, useEffect, useState } from "react"
-import Login from "./components/Auth/Login"
-import AdminDashboard from "./components/Dashboard/AdminDashboard"
-import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard"
-import {AuthValue} from "./context/AuthProvider"
-// import { getLocalStorage, setLocalStorage } from "./utilits/LocalStorage"
+import { useContext, useEffect, useState } from "react";
+import Login from "./components/Auth/Login";
+import AdminDashboard from "./components/Dashboard/AdminDashboard";
+import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
+import { AuthValue } from "./context/AuthProvider";
 
 const App = () => {
+  // State to store user role and data
+  const [user, setUser] = useState(null);
+  const [loggedInUserData, setLoggedInUserData] = useState(null);
 
-  // add useState to check the user or admin is login or not
-  const [user,setUser] = useState(null);
-  const [loggedInUserData , setLoggedInUserData] = useState(null);
+  // Access authentication data from context
+  const authData = useContext(AuthValue);
 
-    const authdata = useContext(AuthValue)
-    console.log(authdata)
+  // Check for existing login data in localStorage when the component mounts
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      const parsedUser = JSON.parse(loggedInUser);
+      setUser(parsedUser.role);
+      setLoggedInUserData(parsedUser.data || null);
+    }
+  }, []);
 
-
-    // To save the data into localStorage after Clear
-  // useEffect(()=>{
-  //   setLocalStorage()
-  //   // getLocalStorage()
-  // },[])
-
-
-  useEffect(()=>{
-    if(authdata){
-      const loggedInUser = localStorage.getItem("loggedInUser");
-      if(loggedInUser){
-        setUser(loggedInUser.role)
+  // Login handler function to set user and role in state and localStorage
+  const loginHandle = (email, password) => {
+    if (authData) {
+      // Check if the login credentials match an admin
+      const admin = authData.admin.find((e) => email === e.email && e.password === password);
+      if (admin) {
+        setUser("admin");
+        localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
+      } else {
+        // Check if the login credentials match an employee
+        const employee = authData.employees.find((e) => email === e.email && e.password === password);
+        if (employee) {
+          setUser("employee");
+          setLoggedInUserData(employee);
+          localStorage.setItem("loggedInUser", JSON.stringify({ role: "employee", data: employee }));
+        } else {
+          alert("Invalid Login");
+        }
       }
-    }
-
-  },[authdata])
-
-
-
-
-  // Create a function to check the login or not and also the the email and password parameter as props in login page.
-// we setUser set the value according to the panel, i.e admin panel and user panel. To check the value with the setUser value and show the panel according to value.
-
-
-  const loginHandle = (email,password)=>{
-    if(authdata && authdata.admin.find((e) => email == e.email && e.password == password)){
-      setUser("admin")
-      localStorage.setItem("loggedInUser",JSON.stringify({role:"admin"}));
-    }
-    else if (authdata){
-      const employee = authdata.employees.find((e) => email == e.email && e.password == password);
-      if(employee){
-        setUser("employees")
-        setLoggedInUserData(employee)
-        localStorage.setItem("loggedInUser",JSON.stringify({role:"employee"}));
-      }
-    }
-    else{
+    } else {
       alert("Invalid Login");
     }
-  }
+  };
+
   return (
     <>
-      {!user ? <Login loginHandle = {loginHandle}/> : " "} 
-      {user == "admin" ? <AdminDashboard/> : (user == "employees" ? <EmployeeDashboard data={loggedInUserData}/> : null)}
+      <h1 className="text-center mt-10 mb-0 pb-10 text-6xl tracking-wider font-bold bg-gradient-to-r from-cyan-300 via-orange-300 to-yellow-300 text-transparent bg-clip-text">
+        Employee Management System
+      </h1>
+      {!user ? (
+        <Login loginHandle={loginHandle} />
+      ) : (
+        user === "admin" ? <AdminDashboard /> : <EmployeeDashboard data={loggedInUserData} />
+      )}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

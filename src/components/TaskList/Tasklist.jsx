@@ -14,7 +14,7 @@ const Tasklist = ({ data }) => {
             let saveInfo = [];
 
             if (task.accept) {
-              saveInfo.push(<AcceptTask data = {task} />);
+              saveInfo.push(<AcceptTask data = {task} key={idx} />);
             }
             if (task.newTask) {
               saveInfo.push(<NewTask data = {task} key={`newTask-${idx}`} />);

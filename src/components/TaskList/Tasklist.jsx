@@ -17,13 +17,13 @@ const Tasklist = ({ data }) => {
               saveInfo.push(<AcceptTask data = {task} />);
             }
             if (task.newTask) {
-              saveInfo.push(<NewTask key={`newTask-${idx}`} />);
+              saveInfo.push(<NewTask data = {task} key={`newTask-${idx}`} />);
             }
             if (task.completed) {
-              saveInfo.push(<CompleteTask key={`completed-${idx}`} />);
+              saveInfo.push(<CompleteTask data = {task} key={`completed-${idx}`} />);
             }
             if (task.failed) {
-              saveInfo.push(<FailedTask key={`failed-${idx}`} />);
+              saveInfo.push(<FailedTask data = {task} key={`failed-${idx}`} />);
             }
             return saveInfo;
           })}

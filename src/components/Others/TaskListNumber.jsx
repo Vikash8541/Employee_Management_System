@@ -3,9 +3,6 @@ const TaskListNumber = ({ data }) => {
   // eslint-disable-next-line react/prop-types
   const { taskCounts } = data;
 
-  // Log the incoming taskCounts object for debugging
-  console.log(taskCounts);
-
   // Define the task types and their default values, if some are missing
   const taskMapping = {
     newTask: "New Task",

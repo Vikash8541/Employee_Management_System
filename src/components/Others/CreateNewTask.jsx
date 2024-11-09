@@ -1,7 +1,7 @@
 const CreateNewTask = () => {
   return (
-    <div className="flex flex-col gap-2 w-1/2 mt-5">
-    <h2 className="text-5xl uppercase font-bold mb-1">Create New Task</h2>
+    <div className="flex flex-col gap-2 w-[30%] mt-5">
+    <h2 className="text-4xl uppercase font-bold mb-1">Create New Task</h2>
     <div className="form bg-[#1c1c1c] p-10 mt-5 rounded-lg ">
       <form className="flex flex-col gap-4 w-full">
         <div className="flex flex-col gap-2">

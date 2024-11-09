@@ -8,7 +8,6 @@ export const AuthValue = createContext();
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
 
-
   // To do dynamic pass the value of authValue by useData
   const [useData , setUseData] =useState(null)
 

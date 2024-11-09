@@ -3,6 +3,7 @@ import Login from "./components/Auth/Login";
 import AdminDashboard from "./components/Dashboard/AdminDashboard";
 import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
 import { AuthValue } from "./context/AuthProvider";
+// import { setLocalStorage } from "./utilits/LocalStorage";
 
 const App = () => {
   // State to store user role and data
@@ -21,6 +22,12 @@ const App = () => {
       setLoggedInUserData(parsedUser.data || null);
     }
   }, []);
+
+
+  // To set the localStorage data in browser console after localStorage clear
+  // useEffect(()=>{
+  //   setLocalStorage();
+  // })
 
   // Login handler function to set user and role in state and localStorage
   const loginHandle = (email, password) => {

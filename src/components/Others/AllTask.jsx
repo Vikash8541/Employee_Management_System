@@ -4,7 +4,6 @@ import { AuthValue } from "../../context/AuthProvider";
 const AllTask = () => {
 
   const authData = useContext(AuthValue)
-  console.log(authData)
 
 
   return (

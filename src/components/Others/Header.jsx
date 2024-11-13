@@ -1,12 +1,8 @@
-// eslint-disable-next-line react/prop-types
 const Header = ({ data }) => {
-  // Function to handle user logout
-  const loggedOutUser = () => {
-    // Clear the logged-in user data from localStorage
-    localStorage.removeItem("loggedInUser");
-    // Reload the page to update the UI (or trigger a re-render in App component)
-    window.location.reload();
-  };
+const loggedOutUser = () => {
+ localStorage.removeItem("loggedInUser");
+  window.location.reload();
+};
 
   return (
     <div>

@@ -33,3 +33,8 @@ body{
     background-color: white;
     border-radius: 10px ;
   }
+
+  #date-calender input::-webkit-calendar-picker-indicator{
+    color-scheme: dark;
+  }
+  
